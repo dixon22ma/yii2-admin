@@ -124,6 +124,7 @@ class Route extends \mdm\admin\BaseObject
             $routes = [];
             // Save original app.
             $yiiApp = Yii::$app;
+            var_dump($advanced);exit;
             // Step through each configured application
             foreach ($advanced as $id => $configPaths) {
                 // Force correct id string.

@@ -12,9 +12,10 @@ $this->registerCssFile($url.'/main.css');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= Yii::$app->language ?>">
     <head>
-        <meta charset="utf-8"/>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
@@ -22,6 +23,8 @@ $this->registerCssFile($url.'/main.css');
     </head>
     <body>
         <?php $this->beginBody() ?>
+
+<div class="wrap">
         <?php
         NavBar::begin([
             'brandLabel' => false,
@@ -45,9 +48,12 @@ $this->registerCssFile($url.'/main.css');
         <div class="container">
             <?= $content ?>
         </div>
+</div>
 
         <footer class="footer">
             <div class="container">
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+
                 <p class="pull-right"><?= Yii::powered() ?></p>
             </div>
         </footer>
